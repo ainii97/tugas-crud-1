@@ -36,6 +36,8 @@
                             <td>{{ $p->isi }}</td>
                             <td>
                                 <a href="{{url('read',array($p->id))}}">Read</a>
+                                <a href="{{url('edit',array($p->id))}}">Update</a>
+                                <a href="{{url('delete',array($p->id))}}">Delete</a>
                             </td>
                         </tr>
                         @endforeach

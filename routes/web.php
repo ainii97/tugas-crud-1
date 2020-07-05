@@ -24,3 +24,9 @@ Route::get('create','PertanyaanController@create');
 Route::post('insert', 'PertanyaanController@insert');
 
 Route::get('read/{id}','PertanyaanController@read');
+
+Route::get('edit/{id}','PertanyaanController@edit');
+
+Route::post('update/{id}', 'PertanyaanController@update');
+
+Route::get('delete/{id}','PertanyaanController@delete');

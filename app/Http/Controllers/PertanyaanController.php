@@ -40,4 +40,24 @@ class PertanyaanController extends Controller
         $pertanyaan=Pertanyaan::find($id);
         return view('read',compact('pertanyaan'));
        }
+   
+       public function edit($id){
+        $pertanyaan=Pertanyaan::find($id);
+        return view('edit',compact('pertanyaan'));
+       }
+   
+       public function update(Request $request, $id){     
+           $pertanyaan = Pertanyaan::findOrFail($id);
+           $pertanyaan->id=$request->get('id');
+           $pertanyaan->judul=$request->get('judul');
+           $pertanyaan->isi=$request->get('isi');
+           $pertanyaan->save();
+        return redirect ('/')->with('alert-success','Berhasil diubah');
+       }
+
+       public function delete($id){
+        $pertanyaan=Pertanyaan::find($id);
+           $pertanyaan->delete();
+           return back();
+       }
 }
